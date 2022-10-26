@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using System.Diagnostics;
 
 namespace BPA_State_2022
 {
@@ -23,6 +25,20 @@ namespace BPA_State_2022
         public MainWindow()
         {
             InitializeComponent();
+            //MessageBox.Show("What up World?");
+
+            #region Sample Read/Write from Text File.
+            string[] question_list = System.IO.File.ReadAllLines(@"C:\Users\sekol_michael\Desktop\CS_Projects\BPA_State_2022\BPA_State_2022\quizquestion.txt");
+
+            MessageBox.Show(question_list[2]);
+
+            foreach(string line in question_list)
+            {
+                Trace.WriteLine(line);
+            }
+
+            #endregion
+
         }
     }
 }
